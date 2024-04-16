@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Compra implements Serializable {
-    private static final long serialVersionUID = 1L; // Esta linha é opcional, mas é uma boa prática adicioná-la
+    private static final long serialVersionUID = 1L; // verificador...
     private LocalDate dataCompra;
     private double valor;
     private int parcelas;
