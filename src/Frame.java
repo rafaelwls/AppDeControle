@@ -1,19 +1,46 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
-public class Frame extends JFrame{
+import javax.swing.*;
+
+public class Frame extends JFrame implements ActionListener{
+
+    JButton button;
+    JLabel label;
+
     
-    Frame() {
+    Frame() {        
+        ImageIcon icon = new ImageIcon("facepalm.png");
+        label = new JLabel();
+        label.setIcon(icon);
+        label.setBounds(200, 200, 900, 700);
+        label.setVisible(false);
         
-        this.setTitle("App teste");
+        button = new JButton();
+        button.setBounds(100, 100, 300, 30);
+        button.setText("Cadastrar");
+        button.setFocusable(false);
+        button.addActionListener(this);
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(800, 600);
+        this.setLayout(null);
+        this.setSize(900, 700);
         this.setVisible(true);
-        this.getContentPane().setBackground(new Color(10,10,10));
+        //this.getContentPane().setBackground(Color.darkGray);
+        this.add(button);
+        this.add(label);
 
 
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //System.out.println("pinto");
+        //button.setEnabled(false);
+        if(e.getSource()==button){
+            label.setVisible(true);
+        }
     }
 }
